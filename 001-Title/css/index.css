@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  -webkit-box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #43389f;
+  background: -webkit-gradient(linear, left bottom, right top, from(#43389f), to(#4ec6ca));
+  background: linear-gradient(to top right, #43389f 0%, #4ec6ca 100%);
+  background: -webkit-linear-gradient(bottom left, #43389f 0%, #4ec6ca 100%);
+  color: white;
+  font-family: "Courier New", "Courier", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+span {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.numbers .number {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.numbers .one-serif {
+  height: 2.5rem;
+  width: 1.5rem;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+  position: relative;
+  left: 0.75rem;
+  z-index: 0;
+}
+
+.numbers .one {
+  height: 6.5rem;
+  width: 1.5rem;
+  z-index: 3;
+  position: relative;
+  left: 0.25rem;
+}
+
+.numbers .zero {
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 1.5rem solid #fff;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  right: 1.5rem;
+  z-index: 0;
+}
+
+.numbers .zero-one {
+  z-index: 2;
+  right: 0.5rem;
+}
+
+.title {
+  font-size: 5.125rem;
+  line-height: 4rem;
+}
+
+.subtitle {
+  font-size: 1.55rem;
+}
+/*# sourceMappingURL=index.css.map */
