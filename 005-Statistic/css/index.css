@@ -1,0 +1,293 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+/* CSS Reset */
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Base Styles */
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  -webkit-box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #42a7a1;
+  color: white;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Card Styles */
+.card {
+  width: 70%;
+  height: 55%;
+  background: white;
+  border-radius: 3px;
+  -webkit-box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Header Styles */
+.header {
+  height: 60px;
+  background: #f1ba64;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 0.5rem;
+}
+
+.header .revenue {
+  text-align: right;
+}
+
+.header .bold {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.header .thin {
+  font-weight: 400;
+  font-size: 11px;
+}
+
+/* Graph Styles */
+.graph-area {
+  color: #606060;
+}
+
+.graph-area .legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  font-size: 10px;
+  gap: 1rem;
+  padding: 0.85rem 0.5rem;
+}
+
+.graph-area .legend span::before {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 3px;
+  margin: 0 4px 2px 4px;
+  border-radius: 3px;
+}
+
+.graph-area .legend .red:before {
+  background: #fa7373;
+}
+
+.graph-area .legend .blue:before {
+  background: #7ba2ff;
+}
+
+.graph-area .statistic {
+  position: relative;
+  width: 260px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.graph-area .statistic .line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #f2f2f2;
+}
+
+.graph-area .statistic .line-1 {
+  top: 0;
+}
+
+.graph-area .statistic .line-2 {
+  top: 50%;
+}
+
+.graph-area .statistic .line-3 {
+  bottom: 0;
+}
+
+.graph-area .statistic .data svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.graph-area .statistic .data polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.graph-area .statistic .data.red polyline {
+  stroke: #fa7373;
+}
+
+.graph-area .statistic .data.blue polyline {
+  stroke: #7ba2ff;
+}
+
+.graph-area .statistic .data .tooltip {
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 10px);
+          transform: translate(-50%, 10px);
+  font-size: 11px;
+  line-height: 11px;
+  color: #fff;
+  padding: 8px 6px;
+  border-radius: 3px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-out 0s, -webkit-transform 0.4s ease-out 0s;
+  transition: opacity 0.4s ease-out 0s, -webkit-transform 0.4s ease-out 0s;
+  transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+  transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s, -webkit-transform 0.4s ease-out 0s;
+}
+
+.graph-area .statistic .data .tooltip:after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 6px;
+  width: 6px;
+  left: 50%;
+  margin-left: -3px;
+  bottom: -3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.graph-area .statistic .data [class^="point-"] {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.graph-area .statistic .data [class^="point-"]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.graph-area .statistic .data.red [class^="point-"],
+.graph-area .statistic .data.red .tooltip,
+.graph-area .statistic .data.red .tooltip:after {
+  background: #fa7373;
+}
+
+.graph-area .statistic .data.red .point-1 {
+  left: 7px;
+  top: 43px;
+}
+
+.graph-area .statistic .data.red .point-2 {
+  left: 48px;
+  top: 9px;
+}
+
+.graph-area .statistic .data.red .point-3 {
+  left: 88px;
+  top: 20px;
+}
+
+.graph-area .statistic .data.red .point-4 {
+  left: 128px;
+  top: 8px;
+}
+
+.graph-area .statistic .data.red .point-5 {
+  left: 169px;
+  top: 35px;
+}
+
+.graph-area .statistic .data.red .point-6 {
+  left: 209px;
+  top: 45px;
+}
+
+.graph-area .statistic .data.red .point-7 {
+  left: 249px;
+  top: 16px;
+}
+
+.graph-area .statistic .data.blue [class^="point-"],
+.graph-area .statistic .data.blue .tooltip,
+.graph-area .statistic .data.blue .tooltip:after {
+  background: #7ba2ff;
+}
+
+.graph-area .statistic .data.blue .point-1 {
+  left: 7px;
+  top: 58px;
+}
+
+.graph-area .statistic .data.blue .point-2 {
+  left: 48px;
+  top: 47px;
+}
+
+.graph-area .statistic .data.blue .point-3 {
+  left: 88px;
+  top: 62px;
+}
+
+.graph-area .statistic .data.blue .point-4 {
+  left: 128px;
+  top: 52px;
+}
+
+.graph-area .statistic .data.blue .point-5 {
+  left: 169px;
+  top: 58px;
+}
+
+.graph-area .statistic .data.blue .point-6 {
+  left: 209px;
+  top: 71px;
+}
+
+.graph-area .statistic .data.blue .point-7 {
+  left: 249px;
+  top: 61px;
+}
+
+.graph-area .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 9px;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  color: #949494;
+}
+/*# sourceMappingURL=index.css.map */
