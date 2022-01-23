@@ -1,0 +1,258 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+$blue: #5f98cd;
+$blue-dark: #264057;
+$blue-light: #b2daff;
+$text-color: #666666;
+$line-color: #ebebeb;
+
+$menu-bg: #43627d;
+
+/* CSS Reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: $blue-dark;
+  color: $text-color;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Card Style */
+.card {
+  width: 300px;
+  height: 300px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+
+  &.show-menu {
+    transform: translate(0, -50%);
+  }
+}
+
+/* Header Styles */
+.header {
+  height: 60px;
+  width: 100%;
+  background: $blue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .menu-icon {
+    width: 2rem;
+    height: 1rem;
+    position: relative;
+    cursor: pointer;
+
+    .line {
+      height: 3px;
+      border-radius: 6px;
+      background: $blue-light;
+      transition: background 0.3s ease;
+      position: absolute;
+    }
+
+    .dash-top {
+      @extend .line;
+      width: 20px;
+    }
+
+    .dash-bottom {
+      @extend .line;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .circle {
+      @extend .line;
+      top: -10%;
+      right: 0;
+      width: 6px;
+      height: 6px;
+    }
+
+    &:hover {
+      .line {
+        background: white;
+      }
+    }
+  }
+
+  .title {
+    font-weight: 600;
+    text-align: center;
+    color: white;
+  }
+
+  .search-input {
+    width: 70%;
+    height: 2rem;
+    padding: 0 1rem;
+    background: white;
+    color: $text-color;
+    border-radius: 1rem;
+    border: none;
+    position: absolute;
+    left: 1rem;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-15px);
+    visibility: hidden;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      visibility: visible;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  .search-icon {
+    color: $blue-light;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+/* Timeline Styles */
+.timeline {
+  width: 100%;
+  height: 80%;
+
+  .content {
+    margin-left: 1.5rem;
+    width: 80%;
+    height: 100%;
+    border-left: 3px solid $line-color;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .notification {
+      padding-left: 0.8rem;
+      transform: translateY(2.5rem);
+      opacity: 0;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        animation: slide-in 0.4s ease 0.5s forwards;
+      }
+
+      &:nth-child(2) {
+        animation: slide-in 0.4s ease 0.65s forwards;
+      }
+
+      &:nth-child(3) {
+        animation: slide-in 0.4s ease 0.85s forwards;
+      }
+
+      &:before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 2px solid $blue;
+        border-radius: 50%;
+        background: white;
+        outline: 3px solid white;
+        position: absolute;
+        left: -8px;
+      }
+
+      .time {
+        font-size: 0.7rem;
+      }
+
+      .message {
+        font-size: 0.95rem;
+
+        .name {
+          font-weight: bold;
+        }
+      }
+
+      &:hover {
+        color: $blue;
+      }
+
+      @keyframes slide-in {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+/* Menu Styles */
+.menu {
+  width: 170px;
+  height: 270px;
+  border-radius: 3px;
+  background-color: $menu-bg;
+  position: absolute;
+  top: 17%;
+  left: 15%;
+  transform: translate3d(20px, 0, 0);
+  transition: all 0.5s ease-in-out;
+
+  ul {
+    height: 100%;
+    color: $blue-light;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0;
+
+    li {
+      padding: 1rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+
+      span {
+        padding: 0 0.5rem;
+      }
+
+      &:hover {
+        background: $blue-dark;
+        color: white;
+      }
+    }
+  }
+
+  &.active {
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: translate3d(0, 0, 0);
+  }
+}
