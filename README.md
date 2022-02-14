@@ -16,4 +16,5 @@ Link to the Challenge: [https://100daysofcode.com/](https://100daysofcode.com/)
 | 005 - Statistic | [link](https://adith-a-danthi.github.io/100-Days-CSS/005-Statistic/) | [link](https://codepen.io/adith-a-danthi/pen/PoJMpoE) |
 | 006 - Profile | [link](https://adith-a-danthi.github.io/100-Days-CSS/006-Profile/) | [link](https://codepen.io/adith-a-danthi/pen/abLepgz) |
 | 007 - Notifications | [link](https://adith-a-danthi.github.io/100-Days-CSS/007-Notifications/) | [link](https://codepen.io/adith-a-danthi/pen/WNZVYbR) |
-| 008 - Metaballs | [link](https://adith-a-danthi.github.io/100-Days-CSS/007-Metaballs/) | - |
+| 008 - Metaballs | [link](https://adith-a-danthi.github.io/100-Days-CSS/008-Metaballs/) | - |
+| 009 - Rainy Night | [link](https://adith-a-danthi.github.io/100-Days-CSS/009-RainyNight/) | - |
